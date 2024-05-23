@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Header from "../header";
-import { register } from "../../../lib";
+import Header from "../../header";
+import { register } from "../../../../lib";
 import { redirect } from "next/navigation";
 
 export async function registerOnSubmit(formData: FormData) {

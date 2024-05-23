@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Header from "../header";
-import { login } from "../../../lib";
+import Header from "../../header";
+import { login } from "../../../../lib";
 
 export async function loginOnSubmit(formData: FormData) {
   "use server";

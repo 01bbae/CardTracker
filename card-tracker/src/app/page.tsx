@@ -1,19 +1,23 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+import { useEffect } from "react";
 
-export async function getStaticProps(){
-  const params = new URLSearchParams(window.location.hash.slice())
-
-  if (params.get('error_code').startsWith('4')) {
-    // show error message if error is a 4xx error
-    window.alert(params.get('error_description'))
-  }
+type Props = {
+  params: {},
+  searchParams: { [key: string]: string | string[] | undefined },
 }
 
+export default function Home(){
+//   const { asPath } = useRouter();
 
-export default function Home() {
-
+//   useEffect(() => {
+//   const hash = (asPath as string).split("#")[1]; // error=unauthorized_client&error_code=401error_description=Something+went+wrong
+//   const parsedHash = new URLSearchParams(hash);
+//   const errorHash = parsedHash.get("error_description"); // Something went wrong
+// }, []); // `asPath` omitted from dependencies as ESLint states it won't change
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 comfortaa-font">
